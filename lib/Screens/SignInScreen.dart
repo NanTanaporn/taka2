@@ -22,6 +22,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 image: DecorationImage(
                     fit: BoxFit.cover, image: AssetImage('asset/img/header.jpg'))),
           ),
+          // ช่องแรก
           SizedBox(
             height: 20,
           ),
@@ -35,6 +36,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         margin: EdgeInsets.only(right: 20, left: 10),
                         child: TextField(
                           decoration: InputDecoration(hintText: 'Username'),
+
                         )))
               ],
             ),
