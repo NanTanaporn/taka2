@@ -1,6 +1,5 @@
 //import 'dart:html';
 import 'package:flutter/material.dart';
-import 'UserScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -15,8 +14,12 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       body: ListView(
         children: <Widget>[
-
-          _myCover(),
+          Container(
+          height: 100,
+          decoration: BoxDecoration(
+          image: DecorationImage(
+          fit: BoxFit.cover, image: AssetImage('asset/img/header.jpg'))),
+          child: _myCover(),),
          
           Padding(
             padding: const EdgeInsets.all(20.0),
@@ -27,28 +30,24 @@ class _HomeScreenState extends State<HomeScreen> {
                   border: OutlineInputBorder(),
                   labelText: 'ค้นหาสถานที่',
                 )),
-          ),
-          
-
-          
-
-
-
-
-          _aa(),
+          ),          
+          _aa(context),
+          _aa(context),
+          _aa(context),
+          _aa(context),
          SizedBox(height: 20.0),
-          Padding(
-            padding: EdgeInsets.only(top: 45.0),
-            child: Container(
-              height: MediaQuery.of(context).size.height - 300.0,
-              child: ListView(
-                children: [
-                // _myUser(),
-                // _myUser(),
-              ],
-            ),
-          ),
-          ),
+          // Padding(
+          //   padding: EdgeInsets.only(top: 45.0),
+          //   child: Container(
+          //     height: MediaQuery.of(context).size.height - 300.0,
+          //     child: ListView(
+          //       children: [
+          //       // _myUser(),
+          //       // _myUser(),
+          //     ],
+          //   ),
+          // ),
+          // ),
 
           SizedBox(height: 20.0),
           Padding(
@@ -80,12 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 Widget _myCover() {
-  return Container(
-    height: 100,
-    decoration: BoxDecoration(
-        image: DecorationImage(
-            fit: BoxFit.cover, image: AssetImage('asset/img/header.jpg'))),
-    child: ListView(
+  return Row(
       children: <Widget>[
         Positioned(
             bottom: 20,
@@ -118,25 +112,14 @@ Widget _myCover() {
               ),
             )),
       ],
-    ),
-  );
+    );
 }
 
-Widget _aa(){
+Widget _aa(context){
 
-return  (
-      ListView.builder(
-        itemCount: 10,
-        shrinkWrap: true,
-        itemBuilder: (BuildContext context, int index) => Container(
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-          child: Card(
-            elevation: 5.0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(0.0),
-            ),
-            child: Container(
+return  Column( 
+          children: <Widget>[
+            Container(
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
               child: Row(
@@ -149,10 +132,10 @@ return  (
                       Container(
                         width: 55.0,
                         height: 55.0,
-                        color: Colors.green,
+                        color: Colors.white,
                         child: CircleAvatar(
-                          backgroundColor: Colors.green,
-                          foregroundColor: Colors.green,
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.white,
                           backgroundImage: AssetImage('asset/img/jak.jpg'),
                         ),
                       ),
@@ -188,8 +171,6 @@ return  (
                 ],
               ),
             ),
-          ),
-        ),
-      )
-    );
-}
+          ],
+        );
+      }
