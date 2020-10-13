@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:signup_ui/Maps/googleMaps.dart';
 import 'editProfile.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
+
 // test
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController nameController = TextEditingController();
@@ -47,9 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   shape: RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(20)),
                   onPressed: () {
-                        Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => EditScreen()));
-                      },
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MapSample()));
+                  },
                   child: Text(
                     "กำหนดการเดินทางเอง",
                     style: TextStyle(fontSize: 18, color: Colors.white),
