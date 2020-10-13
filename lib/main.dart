@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:signup_ui/Screens/homescreen.dart';
+import 'Screens/homescreen.dart';
 import 'Screens/SignInScreen.dart';
 import 'Screens/SignUPScreen.dart';
+import 'Screens/editProfile.dart';
 
 
 void main() => runApp(MyApp());
@@ -19,8 +20,10 @@ class MyApp extends StatelessWidget {
       initialRoute: 'SignIn',
       routes: {
         'SignIn':(context)=>SignInScreen(),
-         'SignUp':(context)=>SignUpScreen(),
+        'SignUp':(context)=>SignUpScreen(),
         'Home':(context)=>HomeScreen(),
+        'Edit':(context)=>EditScreen(),
+
       },
     );
   }
