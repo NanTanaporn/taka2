@@ -171,7 +171,6 @@ class BackButtonWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-
                 ],
               ),
             )
