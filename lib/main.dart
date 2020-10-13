@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screens/homescreen.dart';
+  import 'Screens/homescreen.dart';
 import 'Screens/SignInScreen.dart';
 import 'Screens/SignUPScreen.dart';
 import 'Screens/editProfile.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         'SignUp':(context)=>SignUpScreen(),
         'Home':(context)=>HomeScreen(),
         'Edit':(context)=>EditScreen(),
-
+// 
       },
     );
   }
