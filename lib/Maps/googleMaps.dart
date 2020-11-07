@@ -5,8 +5,6 @@ import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platf
 // ignore: unused_import
 import 'package:geolocator/geolocator.dart';
 
-import '../Screens/editProfile.dart';
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -48,25 +46,25 @@ class MapSampleState extends State<MapSample> {
                   myLocationButtonEnabled: false,
                   zoomControlsEnabled: false,
                 ),
-                Positioned(
-                  top: 40,
-                  left: 10,
-                  child: Container(
-                    child: new IconButton(
-                      icon: new Icon(Icons.arrow_back),
-                      // onPressed: () {
-                      //   Navigator.push(
-                      //       context,
-                      //       MaterialPageRoute(
-                      //           builder: (context) => EditScreen()));
-                      // }
-                    ),
+                // Positioned(
+                //   top: 40,
+                //   left: 10,
+                //   child: Container(
+                //     child: new IconButton(
+                //       icon: new Icon(Icons.arrow_back),
+                //        onPressed: () {
+                //          Navigator.push(
+                //              context,
+                //              MaterialPageRoute(
+                //                  builder: (context) => EditScreen()));
+                //        }
+                //     ),
 
-                    // child: Icon(
-                    //   Icons.arrow_back,
-                    //   size: 28,
-                  ),
-                ),
+                //     // child: Icon(
+                //     //   Icons.arrow_back,
+                //     //   size: 28,
+                //   ),
+                // ),
                 Positioned(
                     bottom: 10,
                     right: 10,
