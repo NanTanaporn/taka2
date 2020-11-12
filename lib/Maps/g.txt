@@ -1,0 +1,144 @@
+//import 'dart:html';
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  int get transpor => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'ค่าโดยสารเฉลี่ยแต่ละบุคคล',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(title:'ค่าโดยสารเฉลี่ยแต่ละบุคคล'),
+    );
+  }
+
+  // int calculateTransport(double distance){
+  //   int transport;
+  //   if (distance < 1.0) {
+  //     transport = 35;
+  //     return transport;
+  //   } else {
+  //     transport = 35 + (distance-1).round()*5;
+  //     return transpor;
+  //   }
+    
+
+  // }
+}
+
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  final _formKey = GlobalKey<FormState>(); //สร้างชุดคีย์สำหรับการกำหนดให้กับแบบฟอร์ม ทำให้ตัว flutter รู้ว่าตัว ฟอร์ม อยู่ที่ไหนในแอพพลิเคชั่น
+  
+  //TextEditingController _textController = TextEditingController();
+  //String _input = " ";
+
+  @override
+  Widget build(BuildContext context) {
+        var raisedButton = RaisedButton(
+                                onPressed: () {
+                                  bool pass = _formKey.currentState.validate(); //สั่ง validate ทุกตัวให้ทำงานแล้วคืนค่ากลับมาเป็น bool
+        
+                                },
+                                // key: widget(
+                                //   child: Center(
+                                //     child:RaisedButton(
+                                //       child: Text('ตกลง'),
+                                //       onPressed: (){
+                                //         showDialog(context: context, builder:(context){
+                                //           return AlertDialog(
+                                //             title: Text("43"),
+                                //           );
+        
+                                //         });
+                                //       }
+                                //       )
+                                //       ),
+                                // )
+                              );
+                return Scaffold(
+                  appBar: AppBar(
+                    title: Text(widget.title),
+                  ),
+                  body: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          SizedBox(height: 20,),
+                          Text('ค่าแท็กซี่ทั้งหมด:'),
+                          TextFormField(
+                            validator: (String input){
+        
+                              if(input.isEmpty){
+                                return "กรุณากรอก ค่าแท็กซี่ทั้งหมด ด้วย";
+                              }
+        
+                              return null; //ที่ต้อง return เป็น null ออกไป เพราะว่า เวลามีปัญหาเราจะสามารถเลือกได้ว่าจะคืนข้อความอะไรออกไป
+                              },
+                          ),
+                          SizedBox(height: 20,),
+                          Text('กี่ท่านที่ร่วมเดินทาง:'),
+                          TextFormField(
+                            validator: (String input){
+        
+                              if(input.isEmpty){
+                                return "กรุณากรอก กี่ท่านที่ร่วมเดินทาง ด้วย";
+                              }
+        
+                              return null; //ที่ต้อง return เป็น null ออกไป เพราะว่า เวลามีปัญหาเราจะสามารถเลือกได้ว่าจะคืนข้อความอะไรออกไป
+                              },
+                          ),
+                          SizedBox(height: 20,),
+                          Row(  //ใช้ครอบตัวปุ่มไว้
+                            children: <Widget>[
+                              Expanded(child: RaisedButton(
+                                onPressed: (){
+
+                                },
+                                child: RaisedButton(
+                                  child: Text('ตกลง'),
+                                  onPressed: (){
+                                    showDialog(context: context, builder: (context){
+                                      return AlertDialog(
+                                        title: Text("43 บาท"),
+                                      );
+                                    });
+                                  },
+                                ),
+
+
+                                )
+
+                                //child: Text('ตกลง'),
+
+                              )
+                ]
+              )
+
+            ],
+          ),
+        )
+      ));
+  }
+}
